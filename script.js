@@ -14,6 +14,7 @@ logoCart.addEventListener('click', toggleShoppingCart);
 arrowBack.addEventListener('click', closeShoppingCart);
 
 
+
 function closeShoppingCart () {
     shoppingCart.classList.add('inactive')
 }
@@ -69,6 +70,7 @@ for (let product of arr) {
 
     const img = document.createElement('img');
     img.setAttribute('src', product.image);
+    img.addEventListener('click', toggleAsideProductDetail)
 
     const productInfo = document.createElement('div');
     productInfo.setAttribute('class', 'product-info');
@@ -101,22 +103,24 @@ for (let product of arr) {
 
 renderProducts(productList)
 
+
 const asideProductDetail = document.querySelector('.product-detail-aside');
 const cardProduct = document.querySelector('.product-card');
 const closeProductDetailIcon = document.querySelector('.product-detail-close');
 
-
-cardProduct.addEventListener('click', toggleAsideProductDetail);
 closeProductDetailIcon.addEventListener('click', closeProductDetail);
+cardProduct.addEventListener('click', toggleAsideProductDetail);
 
 function toggleAsideProductDetail() {
+
     asideProductDetail.classList.toggle('inactive')
     shoppingCart.classList.add('inactive')
     menuDesktop.classList.add('inactive')
     menuMobile.classList.add('inactive')
 }
 
+
+
 function closeProductDetail(){
     asideProductDetail.classList.add('inactive')
 } 
-
